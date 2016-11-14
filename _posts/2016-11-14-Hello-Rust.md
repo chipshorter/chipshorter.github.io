@@ -4,9 +4,9 @@ title: Hello Rust!
 ---
 I've just recently started to look at the [Rust][2] progamming language, and I thought I'd just post a few notes as I went along, comparing, for example, how something might be done in Rust as opposed to [Java][3] (a language I already know pretty well).
 
-One very early method/function I tried to write was to calculate the factorial of a given integer. This is a simple function which would typically be implemented as a recursive function. However, since neither Rust nor Java supports [tail call][4] optimisation at the time of writing, I personally think it's better in most cases to look for alternatives to using recursion in most cases, and anyway I specifically wanted to use Java 8 streams and the equivalent in rust for this comparison.
+One very early function I wrote was to calculate the factorial of a given integer, and I wanted to compare how I would do that in Rust against a similar implemention in Java using Java 8 streams. I know that using recursion would typically be the way to implement a factorial function, however, since neither Rust nor Java support [tail call][4] optimisation at the time of writing, I think it's better to look for alternatives to recursion, and in this case it was only a trivial function as part of my self-learning experience.
 
-In neither case have I made any attempt to validate the input, so if an argument `< 0` or `> 20` is supplied, then things are going to go wrong anyway, but here are the implementations.
+In neither case did I make any attempt to validate the input, so if an argument `< 0` or `> 20` is supplied, then things are going to go wrong anyway, but here are the implementations I ended up with.
 
 In Java:
 {% highlight java %}
