@@ -5,6 +5,7 @@ title: RPG II nostalgia with Java
 Way back at the beginning of my career, the first system I was introduced to was an [IBM System/3][1] and the programming language of choice was [RPG II][2]. RPG is short for for Report Program Generator, and that was it was all about initially - reading in a stack of punched cards as input and producing some sort of printed report. By the time I came to use it, input usually came from magnetic media of some kind, but the program flow was driven by the same built-in cycle. In latter years, the language evolved somewhat beyond it's original purpose. In latter years, the language evolved somewhat beyond it's original purpose.
 
 To cut a long story short, a couple of days ago, I was googling for something-or-other, and quite by chance, I came across a simplified flowchart for the RPG Program Cycle, which is essentially just a read loop over a file with a few distinct processes.
+
 ### The RPG Program Cycle
 
 ![RPG Program Cycle][3]
@@ -176,14 +177,9 @@ All in all it was quite fun. Of course it's not perfect by any means, but it cou
 {% highlight java %}
 package rpg;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.*;
+import java.net.*;
+import java.nio.file.*;
 import java.text.MessageFormat;
 import java.util.Optional;
 
@@ -201,22 +197,16 @@ public abstract class RpgProgram implements RpgCycle {
     }
 
     @Override
-    public final boolean lastRecord() {
-        return lastRecord;
-    }
+    public final boolean lastRecord() { return lastRecord; }
 
     protected final RpgProgram withInputPrimary(String file) throws FileNotFoundException, URISyntaxException {
         this.inputPrimary = getPath(file);
         return this;
     }
 
-    protected final boolean firstPage() {
-        return firstPage;
-    }
+    protected final boolean firstPage() { return firstPage; }
 
-    protected final void setLR() {
-        this.lastRecord = true;
-    }
+    protected final void setLR() { this.lastRecord = true; }
 
     protected final void start() throws IOException {
         // check the input primary file
