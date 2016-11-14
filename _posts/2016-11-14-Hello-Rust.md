@@ -28,7 +28,7 @@ fn factorial(n: usize) -> usize {
 println!("10 factorial is {}", factorial(10));
 {% endhighlight %}
 
-Apart from the Rust syntax being a little more concise they are pretty much the same. Interestingly, if you try to call the function/method with a value of `21` then the Java method will simply return a wrong result(`-4249290049419214848`) due to overflowing the size of a `long`, whereas the Rust function will throw a runtime error:
+Apart from the Rust syntax being a little more concise they are pretty much the same. Interestingly, if you try to call the function/method with a value of `21` then the Java method will simply return a "wrong" result (`-4249290049419214848`) due to overflowing the size of a `long`, whereas the Rust function will throw a runtime error:
 
 `thread 'main' panicked at 'attempt to multiply with overflow'`
 
