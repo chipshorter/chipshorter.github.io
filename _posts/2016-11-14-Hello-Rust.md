@@ -10,7 +10,7 @@ One very early method/function I tried to write was to calculate the factorial o
 
 In neither case have I made any attempt to validate the input, so if an argument `< 0` or `> 20` is supplied, then things are going to go wrong anyway, but here are the implementations.
 
-```java
+{% highlight java %}
 // Java - only works for 0 <= n <= 20
 public static long factorial(int n) {
     return LongStream.rangeClosed(2, n).reduce(1, (sum, x) -> sum * x);
@@ -18,9 +18,9 @@ public static long factorial(int n) {
 
 // prints -> 10 factorial is 3628800 
 System.out.println("10 factorial is " + factorial(10));
+{% endhighlight %}
 
-``` 
-```rust
+{% highlight rust %}
 // Rust - only works for 0 <= n <= 20
 fn factorial(n: usize) -> usize {
     (1..n+1).fold(1, |sum, x| sum * x)
@@ -28,7 +28,7 @@ fn factorial(n: usize) -> usize {
 
 // prints -> 10 factorial is 3628800 
 println!("10 factorial is {}", factorial(10));
-```
+{% endhighlight %}
 
 The [Rust][2] syntax is a little more concise, but both are pretty much the same in this case. Interestingly, if you try to call the function/method with a value of `21` then the [Java][3] method will just return a wrong result(`-4249290049419214848`) due to overflowing the size of a `long`, whereas the [Rust][2] function will throw a runtime error `thread 'main' panicked at 'attempt to multiply with overflow'`, which I prefer as it's safer. Of course, it would be better to implement some error handling, but it's early days for me with [Rust][2]. 
 
