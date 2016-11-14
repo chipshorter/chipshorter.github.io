@@ -22,13 +22,17 @@ System.out.println("10 factorial is " + factorial(10));
 {% highlight rust %}
 // Rust - only works for 0 <= n <= 20
 fn factorial(n: usize) -> usize {
-    (1..n+1).fold(1, |a, b| a * b)
+    (2..n+1).fold(1, |a, b| a * b)
 }
 // prints -> 10 factorial is 3628800 
 println!("10 factorial is {}", factorial(10));
 {% endhighlight %}
 
-Apart from the [Rust][2] syntax is a little more concise they are pretty much the same. Interestingly, if you try to call the function/method with a value of `21` then the [Java][3] method will simply return a wrong result(`-4249290049419214848`) due to overflowing the size of a `long`, whereas the [Rust][2] function will throw a runtime error `thread 'main' panicked at 'attempt to multiply with overflow'`, which I prefer as it's safer. Of course, it would be better to implement some error handling, but it's early days for me with [Rust][2]. 
+Apart from the [Rust][2] syntax is a little more concise they are pretty much the same. Interestingly, if you try to call the function/method with a value of `21` then the [Java][3] method will simply return a wrong result(`-4249290049419214848`) due to overflowing the size of a `long`, whereas the [Rust][2] function will throw a runtime error 
+
+`thread 'main' panicked at 'attempt to multiply with overflow'`
+
+, which I prefer as it's safer. Of course, it would be better to implement some error handling, but it's early days for me with [Rust][2]. 
 
 
 [1]: https://jekyllrb.com "Jekyll"
