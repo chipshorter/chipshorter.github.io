@@ -10,6 +10,7 @@ One very early method/function I tried to write was to calculate the factorial o
 
 In neither case have I made any attempt to validate the input, so if an argument `< 0` or `> 20` is supplied, then things are going to go wrong anyway, but here are the implementations.
 
+In Java:
 {% highlight java %}
 // Java - only works for 0 <= n <= 20
 public static long factorial(int n) {
@@ -19,6 +20,7 @@ public static long factorial(int n) {
 System.out.println("10 factorial is " + factorial(10));
 {% endhighlight %}
 
+and in Rust:
 {% highlight rust %}
 // Rust - only works for 0 <= n <= 20
 fn factorial(n: usize) -> usize {
@@ -28,11 +30,11 @@ fn factorial(n: usize) -> usize {
 println!("10 factorial is {}", factorial(10));
 {% endhighlight %}
 
-Apart from the [Rust][2] syntax is a little more concise they are pretty much the same. Interestingly, if you try to call the function/method with a value of `21` then the [Java][3] method will simply return a wrong result(`-4249290049419214848`) due to overflowing the size of a `long`, whereas the [Rust][2] function will throw a runtime error 
+Apart from the [Rust][2] syntax is a little more concise they are pretty much the same. Interestingly, if you try to call the function/method with a value of `21` then the [Java][3] method will simply return a wrong result(`-4249290049419214848`) due to overflowing the size of a `long`, whereas the [Rust][2] function will throw a runtime error:
 
 `thread 'main' panicked at 'attempt to multiply with overflow'`
 
-, which I prefer as it's safer. Of course, it would be better to implement some error handling, but it's early days for me with [Rust][2]. 
+I personally think the [Rust][2] approach is preferable in this instance. Of course, it would be better to implement some error handling, but it's early days for me with [Rust][2]. 
 
 
 [1]: https://jekyllrb.com "Jekyll"
