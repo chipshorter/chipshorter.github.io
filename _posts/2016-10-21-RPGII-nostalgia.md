@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RPG/II nostalgia with Java
+title: RPG II nostalgia with Java
 ---
 Way back at the beginning of my career, the first system I was introduced to was an [IBM System/3][1] and the programming language of choice was [RPG II][2]. RPG is short for for Report Program Generator, and that was it was all about initially - reading in a stack of punched cards as input and producing some sort of printed report. By the time I came to use it, input usually came from magnetic media of some kind, but the program flow was driven by the same built-in cycle. In latter years, the language evolved somewhat beyond it's original purpose. In latter years, the language evolved somewhat beyond it's original purpose.
 
@@ -140,7 +140,7 @@ public class MyRpgProgram extends RpgProgram {
 {% endhighlight %}
 
 And the output looks like this...
-{% highlight %}
+{% highlight text %}
 Line  Name                  Amt (£)
 ====  ====================  =======
    1  Lisa Fuller            300.75
@@ -159,7 +159,7 @@ TOTAL AMOUNT: £2,627.16
 All in all it was quite fun. Of course it's not perfect by any means, but it could easily be made more sophisticated to support more complex processing, and it's actually quite cool for making quick reports, just like the original inspiration was.
 
 #### expenses.csv
-{% highlight %}
+{% highlight csv %}
 1,Lisa,Fuller,300.75
 2,Henry,Morales,385.94
 3,Lori,Gibson,279.16
