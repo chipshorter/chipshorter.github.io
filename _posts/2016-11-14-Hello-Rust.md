@@ -13,7 +13,7 @@ In neither case have I made any attempt to validate the input, so if an argument
 {% highlight java %}
 // Java - only works for 0 <= n <= 20
 public static long factorial(int n) {
-    return LongStream.rangeClosed(2, n).reduce(1, (sum, x) -> sum * x);
+    return LongStream.rangeClosed(2, n).reduce(1, (a, b) -> a * b);
 }
 // prints -> 10 factorial is 3628800 
 System.out.println("10 factorial is " + factorial(10));
@@ -22,7 +22,7 @@ System.out.println("10 factorial is " + factorial(10));
 {% highlight rust %}
 // Rust - only works for 0 <= n <= 20
 fn factorial(n: usize) -> usize {
-    (1..n+1).fold(1, |sum, x| sum * x)
+    (1..n+1).fold(1, |a, b| a * b)
 }
 // prints -> 10 factorial is 3628800 
 println!("10 factorial is {}", factorial(10));
