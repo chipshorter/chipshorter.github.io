@@ -1,4 +1,7 @@
-## Fun with RPG II and Java
+---
+layout: post
+title: RPG/II nostalgia with Java
+---
 Way back at the beginning of my career, the first system I was introduced to was an [IBM System/3][1] and the programming language of choice was [RPG II][2]. RPG is short for for Report Program Generator, and that was it was all about initially - reading in a stack of punched cards as input and producing some sort of printed report. By the time I came to use it, input usually came from magnetic media of some kind, but the program flow was driven by the same built-in cycle. In latter years, the language evolved somewhat beyond it's original purpose. In latter years, the language evolved somewhat beyond it's original purpose.
 
 To cut a long story short, a couple of days ago, I was googling for something-or-other, and quite by chance, I came across a simplified flowchart for the RPG Program Cycle, which is essentially just a read loop over a file with a few distinct processes.
@@ -25,7 +28,7 @@ Repeat ad-infinitum
 Although it wasn't strictly necessary I decided to write a Java interface `RpgCycle` for the 7 steps above, and here is how it looked.
 ### The RPG Program Cycle Java interface
 
-```Java
+{% highlight java %}
 package rpg;
 
 public interface RpgCycle {
@@ -37,12 +40,13 @@ public interface RpgCycle {
     default void moveFields(Object input) {}
     void detailCalcs();
 }
-```
+{% endhighlight %}
+
 The methods defined reflect the steps numbered peviously and are listed in the same order. Notice that I provided empty default implementations for all but two of the methods. This is because often many of them were not required in the program. What might, on the face, look questionable is the default method for `getInput` The explanation is that later versions of RPG did not require a primary file, and everything would be done in detail calcs..
 ### The RPG Program abstract class
 Next I created an abstract class `RpgProgram` which implemented the above interface, and in that class, I created a `start()` method which looks like this.
 
-```Java
+{% highlight java %}
 protected final void start() throws IOException {
     try (BufferedReader rdr = new BufferedReader(new FileReader(inputPrimary.toFile()))) {
         // now start the RPG cycle...
@@ -68,12 +72,13 @@ protected final void start() throws IOException {
         }
     }
 }
-```
+{% endhighlight %}
+
 There are a few supporting methods and variables which can be seen in the complete listing at the end of this posting, but essentially you can see how all the steps are performed in a continuous loop until the input file has been completely read.
 ### The Main Program
 The main program uses an input CSV file and produces and output (to stdout in this case), and here it is in all it's glory...
 
-```Java
+{% highlight java %}
 package rpg;
 
 import java.io.PrintStream;
@@ -132,9 +137,10 @@ public class MyRpgProgram extends RpgProgram {
     }
 
 }
-```
+{% endhighlight %}
+
 And the output looks like this...
-```
+{% highlight %}
 Line  Name                  Amt (£)
 ====  ====================  =======
    1  Lisa Fuller            300.75
@@ -149,11 +155,11 @@ Line  Name                  Amt (£)
   10  Henry Crawford         469.02
 
 TOTAL AMOUNT: £2,627.16
-```
+{% endhighlight %}
 All in all it was quite fun. Of course it's not perfect by any means, but it could easily be made more sophisticated to support more complex processing, and it's actually quite cool for making quick reports, just like the original inspiration was.
 
 #### expenses.csv
-```
+{% highlight %}
 1,Lisa,Fuller,300.75
 2,Henry,Morales,385.94
 3,Lori,Gibson,279.16
@@ -164,9 +170,10 @@ All in all it was quite fun. Of course it's not perfect by any means, but it cou
 8,Bonnie,Lane,427.79
 9,Rachel,Romero,319.36
 10,Henry,Crawford,469.02
-```
+{% endhighlight %}
+
 #### RpgProgram.java
-```Java
+{% highlight java %}
 package rpg;
 
 import java.io.BufferedReader;
@@ -250,7 +257,7 @@ public abstract class RpgProgram implements RpgCycle {
     }
 
 }
-```
+{% endhighlight %}
 
 [1]: https://en.wikipedia.org/wiki/IBM_System/3 "IBM System/3"
 
