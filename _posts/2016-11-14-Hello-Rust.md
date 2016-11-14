@@ -15,7 +15,6 @@ In neither case have I made any attempt to validate the input, so if an argument
 public static long factorial(int n) {
     return LongStream.rangeClosed(2, n).reduce(1, (sum, x) -> sum * x);
 }
-
 // prints -> 10 factorial is 3628800 
 System.out.println("10 factorial is " + factorial(10));
 {% endhighlight %}
@@ -25,7 +24,6 @@ System.out.println("10 factorial is " + factorial(10));
 fn factorial(n: usize) -> usize {
     (1..n+1).fold(1, |sum, x| sum * x)
 }
-
 // prints -> 10 factorial is 3628800 
 println!("10 factorial is {}", factorial(10));
 {% endhighlight %}
