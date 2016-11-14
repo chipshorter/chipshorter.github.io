@@ -27,6 +27,7 @@ Start
 Repeat ad-infinitum
 
 Although it wasn't strictly necessary I decided to write a Java interface `RpgCycle` for the 7 steps above, and here is how it looked.
+
 ### The RPG Program Cycle Java interface
 
 {% highlight java %}
@@ -43,8 +44,10 @@ public interface RpgCycle {
 }
 {% endhighlight %}
 
-The methods defined reflect the steps numbered peviously and are listed in the same order. Notice that I provided empty default implementations for all but two of the methods. This is because often many of them were not required in the program. What might, on the face, look questionable is the default method for `getInput` The explanation is that later versions of RPG did not require a primary file, and everything would be done in detail calcs..
+The methods defined reflect the steps numbered peviously and are listed in the same order. Notice that I provided empty default implementations for all but two of the methods. This is because often many of them were not required in the program. What might, on the face, look questionable is the default method for `getInput` The explanation is that later versions of RPG did not require a primary file, and everything would be done in detail calcs.
+
 ### The RPG Program abstract class
+
 Next I created an abstract class `RpgProgram` which implemented the above interface, and in that class, I created a `start()` method which looks like this.
 
 {% highlight java %}
@@ -76,7 +79,9 @@ protected final void start() throws IOException {
 {% endhighlight %}
 
 There are a few supporting methods and variables which can be seen in the complete listing at the end of this posting, but essentially you can see how all the steps are performed in a continuous loop until the input file has been completely read.
+
 ### The Main Program
+
 The main program uses an input CSV file and produces and output (to stdout in this case), and here it is in all it's glory...
 
 {% highlight java %}
