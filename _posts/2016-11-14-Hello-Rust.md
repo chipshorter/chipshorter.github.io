@@ -6,7 +6,7 @@ I recently created a new blog on blogger.com where I wanted to show code samples
 
 As way of creating a "Hello, world!" blog entry, and because I've just started to look at the [Rust][2] progamming language, I thought I'd just post a few of my notes on things as I went along, comparing, for example, how something might be done in [Rust][2] as opposed to [Java][3] (a language I already know pretty well).
 
-One very early method/function I tried to write was to calculate the factorial of a given integer. This is a simple function which would typically be implemented as a recursive function. However, since neither [Rust][2] nor [Java][3] support [tail call][4] optimisation at the time of writing, I wanted to do this using [Java][3] 8 streams and the equivalent in rust.
+One very early method/function I tried to write was to calculate the factorial of a given integer. This is a simple function which would typically be implemented as a recursive function. However, since neither [Rust][2] nor [Java][3] supports [tail call][4] optimisation at the time of writing, I wanted to do this using [Java][3] 8 streams and the equivalent in rust.
 
 In neither case have I made any attempt to validate the input, so if an argument `< 0` or `> 20` is supplied, then things are going to go wrong anyway, but here are the implementations.
 
