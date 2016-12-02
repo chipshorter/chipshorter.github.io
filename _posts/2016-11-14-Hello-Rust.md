@@ -21,7 +21,7 @@ System.out.println("10 factorial is " + factorial(10));
 and in Rust:
 {% highlight rust %}
 // Rust - only works for 0 <= n <= 20
-fn factorial(n: usize) -> usize {
+fn factorial(n: u64) -> u64 {
     (2..n+1).fold(1, |a, b| a * b)
 }
 // prints -> 10 factorial is 3628800 
