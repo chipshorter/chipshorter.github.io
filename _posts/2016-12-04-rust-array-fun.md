@@ -8,7 +8,7 @@ Anyway, to cut a long story short, one of the problems concerned [Pandigital Num
 
 {% highlight rust %}
 fn is_pandigital(nbr: u64) -> bool {
-    // create array of 9 elements initialiset to zero
+    // create array of 9 elements initialised to zero
     let mut a = [0; 9];
     let mut x = nbr;
     while x != 0 {
@@ -21,7 +21,7 @@ fn is_pandigital(nbr: u64) -> bool {
         if a[idx] > 1 {return false}
         x = x / 10
     }
-    // must be true at this point, so no real need for this
+    // check we have one of each
     a.iter().fold(0, |a, b| a + b) == 9
 }
 {% endhighlight %}
