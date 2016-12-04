@@ -4,7 +4,7 @@ title: Rust array fun
 ---
 I'm still in the initial stages of trying to learn the [Rust][1] programming language, so I'm going throught the problems over at [Project Euler][2] and working my way through the problems and trying to solve them using Rust. I solved the first 30 or so using [Java][3] and then converted 2 or 3 of my solutions to [Rust][1], but eventually I bit the bullet and am now using [Rust][1] exclusively without resorting to the comfortable pair of slippers.
 
-To cut a long story short, one of the problems concerned [Pandigital Numbers][4], containing exactly one each of the digits 1-9 only (no '0' digit allowed). So I wrote a function to check whether a number I had generated satisfied that criteria. Here it is:
+To cut a long story short, one of the problems concerned [Pandigital Numbers][4], containing exactly one each of the digits 1-9 only (no `0` digit allowed). So I wrote a function to check whether a number I had generated satisfied that criteria. Here it is:
 
 {% highlight rust %}
 fn is_pandigital(nbr: u64) -> bool {
