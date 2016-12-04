@@ -40,7 +40,7 @@ let mut a = [0; 9];
 let mut num: u64 = 5;
 let mut idx = num % 10;
 a[idx]=2;
-println!("a[0]={}",a[0]);
+println!("a[{}]={}",idx,a[idx]);
 
 // generates a compiler error as below
 error[E0277]: the trait bound `[{integer}]: std::ops::IndexMut<u64>` is not satisfied
