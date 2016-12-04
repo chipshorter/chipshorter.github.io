@@ -56,7 +56,11 @@ Hence if you look at the function I ended up with, there is a cast
 {% highlight rust %}let idx: usize = (rem - 1) as usize;{% endhighlight %}
 
 This makes it work, but somehow it feels wrong. I'll probably figure it out at some point in the future.
+
 [1]: https://www.rust-lang.org "Rust"
+
 [2]: https://projecteuler.net "Project Euler"
+
 [3]: http://openjdk.java.net "Java"
+
 [4]: https://en.wikipedia.org/wiki/Pandigital_number "Pandigital Numbers"
