@@ -37,8 +37,8 @@ fn is_palindrome(nbr: u64) -> bool {
 
 // version 2
 fn is_palindrome(nbr: u64) -> bool {
-    let nbrstr = num.to_string();
-    let half = num_string.len() / 2;  
+    let nbrstr = nbr.to_string();
+    let half = nbrstr.len() / 2;  
     nbrstr.bytes().take(half).eq(nbrstr.bytes().rev().take(half))
 }
 {% endhighlight %}
