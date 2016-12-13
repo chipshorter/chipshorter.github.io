@@ -25,6 +25,24 @@ digits = format!("{}{}", digits, i.to_string());
 buffer.push(ch);
 {% endhighlight %}
 
+Here are two differnt ways I found of checking if a number was a palindrome (i.e. reads same left-to-right as right-to-left:
+
+{% highlight rust %}
+// version 1
+fn is_palindrome(nbr: u64) -> bool {
+    let nbrstr = nbr.to_string();
+    let half = nbrstr.len() / 2;
+    nbrstr.chars().zip(nbrstr.chars().rev()).take(half).filter(|&(x,y)| x == y).count() == n
+}
+
+// version 2
+fn is_palindrome(nbr: u64) -> bool {
+    let nbrstr = num.to_string();
+    let half = num_string.len() / 2;  
+    nbrstr.bytes().take(half).eq(nbrstr.bytes().rev().take(half))
+}
+{% endhighlight %}
+
 I was intending this to be a longer post, but I've run of time for now, hopefully I'll find some time to complete it later.
 
 
