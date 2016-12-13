@@ -25,7 +25,7 @@ digits = format!("{}{}", digits, i.to_string());
 buffer.push(ch);
 {% endhighlight %}
 
-Here are two differnt ways I found of checking if a number was a palindrome (i.e. reads same left-to-right as right-to-left:
+Here are two different ways I found to check if a number was a palindrome (i.e. reads same left-to-right as right-to-left:
 
 {% highlight rust %}
 // version 1
